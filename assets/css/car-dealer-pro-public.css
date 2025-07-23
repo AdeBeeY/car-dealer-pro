@@ -1,0 +1,418 @@
+/* General Body Styles for plugin components */
+:root {
+    --car-dealer-pro-primary: #0073aa; /* WordPress default blue */
+    --car-dealer-pro-primary-dark: #005177;
+    --car-dealer-pro-secondary: #f0f0f0;
+    --car-dealer-pro-text-color: #333;
+    --car-dealer-pro-border-color: #ddd;
+    --car-dealer-pro-card-bg: #fff;
+    --car-dealer-pro-hover-bg: #f9f9f9;
+}
+
+.car-dealer-pro-container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 15px;
+    box-sizing: border-box;
+}
+
+/* Filter Form Styles */
+.car-dealer-pro-filter-form {
+    background: var(--car-dealer-pro-card-bg);
+    border: 1px solid var(--car-dealer-pro-border-color);
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.car-dealer-pro-filter-form div {
+    display: flex;
+    flex-direction: column;
+}
+
+.car-dealer-pro-filter-form label {
+    font-weight: bold;
+    margin-bottom: 5px;
+    color: var(--car-dealer-pro-text-color);
+}
+
+.car-dealer-pro-filter-form input[type="text"],
+.car-dealer-pro-filter-form input[type="number"],
+.car-dealer-pro-filter-form select {
+    padding: 8px 10px;
+    border: 1px solid var(--car-dealer-pro-border-color);
+    border-radius: 4px;
+    font-size: 15px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.car-dealer-pro-filter-form button {
+    background-color: var(--car-dealer-pro-primary);
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    align-self: flex-end; /* Align buttons to the bottom of their grid cell */
+    margin-top: auto; /* Push buttons to the bottom if content above varies */
+}
+
+.car-dealer-pro-filter-form button:hover {
+    background-color: var(--car-dealer-pro-primary-dark);
+}
+
+.car-dealer-pro-filter-form .car-dealer-pro-reset-button {
+    background-color: #6c757d; /* A neutral gray */
+}
+.car-dealer-pro-filter-form .car-dealer-pro-reset-button:hover {
+    background-color: #5a6268;
+}
+
+/* Car Listing Grid */
+.car-listings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* Car Card Styles */
+.car-dealer-pro-car-card {
+    background: var(--car-dealer-pro-card-bg);
+    border: 1px solid var(--car-dealer-pro-border-color);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* Ensure cards are same height */
+}
+
+.car-dealer-pro-car-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0,0,0,0.15);
+}
+
+.car-dealer-pro-car-card .car-image {
+    width: 100%;
+    height: 200px; /* Fixed height for consistent image display */
+    overflow: hidden;
+}
+
+.car-dealer-pro-car-card .car-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.car-dealer-pro-car-card .car-details {
+    padding: 15px;
+    flex-grow: 1; /* Allow details section to grow */
+    display: flex;
+    flex-direction: column;
+}
+
+.car-dealer-pro-car-card .car-details h3 {
+    margin-top: 0;
+    margin-bottom: 10px;
+    font-size: 22px;
+}
+
+.car-dealer-pro-car-card .car-details h3 a {
+    color: var(--car-dealer-pro-primary);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.car-dealer-pro-car-card .car-details h3 a:hover {
+    color: var(--car-dealer-pro-primary-dark);
+}
+
+.car-dealer-pro-car-card .car-price {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--car-dealer-pro-primary);
+    margin-bottom: 15px;
+}
+
+.car-dealer-pro-car-card .car-specs {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 15px 0;
+    font-size: 15px;
+    color: var(--car-dealer-pro-text-color);
+    flex-grow: 1; /* Allows specs to push CTA button to bottom */
+}
+
+.car-dealer-pro-car-card .car-specs li {
+    margin-bottom: 5px;
+}
+
+.car-dealer-pro-car-card .car-status-badge {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-bottom: 15px;
+}
+
+.car-dealer-pro-car-card .car-status-badge.available {
+    background-color: #28a745; /* Green */
+    color: #fff;
+}
+
+.car-dealer-pro-car-card .car-status-badge.sold {
+    background-color: #dc3545; /* Red */
+    color: #fff;
+}
+
+.car-dealer-pro-car-card .car-status-badge.pending {
+    background-color: #ffc107; /* Yellow */
+    color: #333;
+}
+
+.car-dealer-pro-car-card .cta-button {
+    display: inline-block;
+    background-color: var(--car-dealer-pro-primary);
+    color: #fff;
+    padding: 10px 15px;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+    margin-top: auto; /* Push button to the bottom */
+}
+
+.car-dealer-pro-car-card .cta-button:hover {
+    background-color: var(--car-dealer-pro-primary-dark);
+}
+
+/* Single Car Page Styles */
+.single-car-container {
+    padding: 20px;
+    background-color: var(--car-dealer-pro-card-bg);
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}
+
+.single-car-header {
+    margin-bottom: 30px;
+    border-bottom: 1px solid var(--car-dealer-pro-border-color);
+    padding-bottom: 15px;
+}
+
+.single-car-header h1 {
+    font-size: 36px;
+    margin-top: 0;
+    color: var(--car-dealer-pro-primary);
+}
+
+.single-car-header .single-car-price {
+    font-size: 28px;
+    font-weight: bold;
+    color: #28a745; /* A distinct green for price */
+}
+
+.single-car-gallery {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 30px;
+}
+
+.single-car-gallery .main-image img {
+    width: 100%;
+    height: auto;
+    max-height: 500px; /* Cap main image height */
+    object-fit: contain; /* Ensure image is fully visible */
+    border: 1px solid var(--car-dealer-pro-border-color);
+    border-radius: 5px;
+}
+
+.single-car-gallery .thumbnails {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 5px;
+}
+
+.single-car-gallery .thumbnails img {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+    border: 1px solid var(--car-dealer-pro-border-color);
+    border-radius: 3px;
+    cursor: pointer;
+    transition: border-color 0.2s ease, transform 0.2s ease;
+}
+
+.single-car-gallery .thumbnails img:hover,
+.single-car-gallery .thumbnails img.active {
+    border-color: var(--car-dealer-pro-primary);
+    transform: scale(1.05);
+}
+
+
+.single-car-details-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 30px;
+}
+
+.single-car-details-block {
+    background-color: var(--car-dealer-pro-secondary);
+    padding: 20px;
+    border-radius: 8px;
+    border: 1px solid var(--car-dealer-pro-border-color);
+}
+
+.single-car-details-block h2 {
+    color: var(--car-dealer-pro-primary-dark);
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 1px dashed var(--car-dealer-pro-border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.single-car-details-block ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.single-car-details-block ul li {
+    margin-bottom: 10px;
+    font-size: 16px;
+    color: var(--car-dealer-pro-text-color);
+}
+
+.single-car-details-block ul li strong {
+    color: var(--car-dealer-pro-primary);
+    display: inline-block;
+    min-width: 100px;
+}
+
+/* Description styles */
+.single-car-description {
+    padding: 20px;
+    background-color: var(--car-dealer-pro-secondary);
+    border-radius: 8px;
+    border: 1px solid var(--car-dealer-pro-border-color);
+    margin-bottom: 30px;
+}
+.single-car-description h2 {
+    color: var(--car-dealer-pro-primary-dark);
+    margin-top: 0;
+    font-size: 24px;
+    border-bottom: 1px dashed var(--car-dealer-pro-border-color);
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+.single-car-description p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+/* Pagination Styles for Archive Page */
+.car-pagination {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid var(--car-dealer-pro-border-color);
+}
+
+.car-pagination .nav-links {
+    display: inline-flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.car-pagination .page-numbers {
+    display: inline-block;
+    padding: 8px 12px;
+    border: 1px solid var(--car-dealer-pro-border-color);
+    text-decoration: none;
+    color: var(--car-dealer-pro-text-color);
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.car-pagination .page-numbers:hover {
+    background-color: var(--car-dealer-pro-primary);
+    color: #fff;
+    border-color: var(--car-dealer-pro-primary);
+}
+
+.car-pagination .page-numbers.current {
+    background-color: var(--car-dealer-pro-primary);
+    color: #fff;
+    border-color: var(--car-dealer-pro-primary);
+    cursor: default;
+}
+
+/* No Results Message */
+.no-results {
+    text-align: center;
+    padding: 50px 20px;
+    border: 1px dashed var(--car-dealer-pro-border-color);
+    border-radius: 8px;
+    background-color: var(--car-dealer-pro-secondary);
+    color: var(--car-dealer-pro-text-color);
+    font-size: 18px;
+    margin-top: 30px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .car-dealer-pro-filter-form {
+        grid-template-columns: 1fr; /* Stack filters vertically on smaller screens */
+    }
+    .car-listings-grid {
+        grid-template-columns: 1fr; /* Single column for car cards */
+    }
+    .single-car-gallery,
+    .single-car-details-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* AJAX Loading State */
+#car-listings-results.loading {
+    opacity: 0.5;
+    pointer-events: none;
+    position: relative;
+}
+
+#car-listings-results.loading::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid var(--car-dealer-pro-primary);
+    border-top: 4px solid transparent;
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% { transform: translate(-50%, -50%) rotate(0deg); }
+    100% { transform: translate(-50%, -50%) rotate(360deg); }
+}
